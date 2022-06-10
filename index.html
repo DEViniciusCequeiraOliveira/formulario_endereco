@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="tailwind.js"></script>
+    <script src="cep.js"></script>
+    <link rel="icon" href="icone.png">
+    <title>Formulário</title>
+</head>
+
+<body class="w-screen h-screen bg-[url('bg.png')] flex items-center justify-center">
+    <div class="text-center text-4xl font-bold space-y-10 w-full p-48">
+        <h1>Formulário</h1>
+        <div class="bg-white shadow-5xl rounded-xl ">
+            <form class="p-16 space-y-6 text-xl font-medium text-black placeholder:text-gray-500">
+                <div class="flex">
+                    <label class="flex items-center pr-2">Nome:</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name"
+                        class="px-4 bg-gray-300 grow rounded-md placeholder:pl-4 py-2"
+                        placeholder="Nome" required
+                        autofocus>
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="flex">
+                        <label class="flex items-center pr-2">CEP:</label>
+                        <input
+                            type="text" 
+                            id="cep"
+                            name="cep"
+                            class="px-4 bg-gray-300 flex-grow rounded-md placeholder:pl-4 py-2"
+                            onkeypress="mascara(this, '##.###-###')" onblur="pesquisacep(this.value);"
+                            placeholder="44.032-498" id="cep" value="" size="10" maxlength="10" required>
+                    </div>
+                    <div class="flex justify-end">
+                        <a class="text-xs" href="http://">Descubra seu CEP</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-row">
+                    <div class="flex flex-grow flex-nowrap">
+                        <label class="flex items-center pr-2">Rua:</label>
+                        <input   
+                            type="text"
+                            id="rua"
+                            name="street"
+                            placeholder="Rua três portões"
+                            class="px-4 bg-gray-300 grow rounded-md placeholder:pl-4 py-2" disabled>
+                    </div>
+                    <div class="">
+                        <label class="flex-none items-center px-2">Nº:</label>
+                        <input 
+                            type="text"
+                            id="rua"
+                            name="street"
+                            placeholder="777"
+                            class="px-4 bg-gray-300 rounded-md placeholder:pl-4 py-2">
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <label class="flex items-center pr-2">Bairro:</label>
+                    <input 
+                        type="text"
+                        id="bairro"
+                        name="bairro"
+                        placeholder="Campo Limpo"
+                        class="px-4 bg-gray-300 flex-grow rounded-md placeholder:pl-4 py-2" disabled><br>
+                </div>
+                <div class="flex">
+                    <label class="flex items-center pr-2">Cidade:</label>
+                    <input 
+                        type="text"
+                        id="cidade"
+                        name="city"
+                        placeholder="Feira de Santana"
+                        class="px-4 bg-gray-300 flex-grow rounded-md placeholder:pl-4 py-2" disabled><br>
+                </div>
+
+                <div class="flex">
+                    <label class="flex items-center pr-2">Estado:</label>
+                    <input 
+                        type="text"
+                        id="uf"
+                        placeholder="Ba"
+                        name="state"
+                        class="px-4 bg-gray-300 flex-grow rounded-md placeholder:pl-4 py-2" disabled><br>
+                </div>
+
+
+                <button type="submit" class="my-6 rounded-full bg-gray-700 w-1/3 py-1 text-white">Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
